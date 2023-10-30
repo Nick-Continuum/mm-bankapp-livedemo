@@ -2,6 +2,11 @@
 *.txt
 *.pdf
 
+### Environment Settings ###
+.env
+.*.env
+.env.*
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
