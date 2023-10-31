@@ -23,27 +23,32 @@ public class BankMainMenu {
             menu.showSubMenuTitle("Main Menu");
 
             menu.showMenuBlock(
-                    "1. Incoming Transactions",
-                    "2. Outgoing Transactions",
-                    "3. Make Transfer",
-                    "4. Logout"
+                    "1. Show Balance",
+                    "2. Incoming Transactions",
+                    "3. Outgoing Transactions",
+                    "4. Make Transfer",
+                    "5. Logout"
             );
             String choice = menu.askForUserInput("Please enter your choice from the menu: ");
 
             switch (choice) {
                 case "1":
-                    menu.showMenuItem("HERE BE TRANSACTIONS");
+                    BalanceMenu balance = new BalanceMenu(user, menu);
+                    balance.showMenu();
                     break;
                 case "2":
-                    menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
+                    menu.showMenuItem("HERE BE TRANSACTIONS");
                     break;
                 case "3":
+                    menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
+                    break;
+                case "4":
                     TransferMenu transfer = new TransferMenu(user, menu, bankService);
                     transfer.showMenu();
                     break;
                 default:
                     menu.showError("Fraude detected, Invalid choice!");
-                case "4":
+                case "5":
                     loginMenu.logout();
             }
         }
