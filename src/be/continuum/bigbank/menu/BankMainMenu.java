@@ -33,8 +33,7 @@ public class BankMainMenu {
 
             switch (choice) {
                 case "1":
-                    BalanceMenu balance = new BalanceMenu(user, menu);
-                    balance.showMenu();
+                    new BalanceMenu(user, menu).showMenu();
                     break;
                 case "2":
                     menu.showMenuItem("HERE BE TRANSACTIONS");
@@ -43,8 +42,7 @@ public class BankMainMenu {
                     menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
                     break;
                 case "4":
-                    TransferMenu transfer = new TransferMenu(user, menu, bankService);
-                    transfer.showMenu();
+                    new TransferMenu(user, menu, bankService).showMenu();
                     break;
                 default:
                     menu.showError("Fraude detected, Invalid choice!");
