@@ -1,18 +1,13 @@
 package be.continuum.bigbank.menu;
 
-import java.util.Scanner;
+import static be.continuum.bigbank.menu.MenuHandler.KEYBOARD;
 
 public class BankMainMenu {
     public void run() {
-        System.out.println("+++++      +++++++       ++++++");
-        System.out.println("+ Welcome to the Big Bank App +");
-        System.out.println("+++++      +++++++       ++++++");
+        MenuHandler menu = new MenuHandler();
+        menu.showMenuTitle("Welcome to the Big Bank App");
 
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Please enter your IBAN: ");
-        String authenticatingUserIban = keyboard.next();
-        System.out.println("Please enter your Pincode: ");
-        String authenticatingUserPin = keyboard.next();
-        int userPin = Integer.parseInt(authenticatingUserPin);
+        String authenticatingUserIban = menu.askForUserInput("Please enter your IBAN: ");
+        int authenticatingUserPin = menu.askForUserInputAsInteger("Please enter your Pincode: ");
     }
 }
