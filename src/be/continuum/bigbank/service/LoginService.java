@@ -6,8 +6,8 @@ import be.continuum.bigbank.exceptions.LockedAccountException;
 import be.continuum.bigbank.model.BankAccount;
 
 public class LoginService {
+    private static final BankAccountInMemoryRepository accountRepository = new BankAccountInMemoryRepository();
     public BankAccount login(String iban, String pin) {
-        BankAccountInMemoryRepository accountRepository = new BankAccountInMemoryRepository();
         BankAccount user = accountRepository.findByIban(iban);
 
         if (user.getPin().equals(pin)) return user;
