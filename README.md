@@ -26,11 +26,10 @@ For Windows, it can be installed by using Chocolatey.
   - [X] An existing IBAN needs to be used.
   - [X] The pincode needs to be correct.
   - [X] A pincode can only be entered wrong three times. After that the account locks
-- [ ] Have a menu system in place that lets you choose between the following options:
-  - [ ] Transfer money
-  - [ ] Show balance
-  - [ ] Show transaction history
-  - [ ] Log out
+- [X] Have a menu system in place that lets you choose between the following options:
+  - [X] Transfer money
+  - [X] Show transaction history
+  - [X] Log out
 - [ ] Be able to transfer money to another account
   - [ ] The recipient IBAN needs to be correct
   - [ ] The amount needs to be a positive number
