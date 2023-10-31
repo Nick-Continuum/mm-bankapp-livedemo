@@ -1,6 +1,6 @@
 package be.continuum.bigbank.menu;
 
-import be.continuum.bigbank.BankAccountInMemoryRepository;
+import be.continuum.bigbank.data.BankAccountInMemoryRepository;
 import be.continuum.bigbank.exceptions.IbanNotFoundException;
 import be.continuum.bigbank.exceptions.IncorrectPinCodeException;
 import be.continuum.bigbank.exceptions.LockedAccountException;

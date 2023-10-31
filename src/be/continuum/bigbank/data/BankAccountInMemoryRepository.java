@@ -1,4 +1,4 @@
-package be.continuum.bigbank;
+package be.continuum.bigbank.data;
 
 import be.continuum.bigbank.exceptions.IbanNotFoundException;
 import be.continuum.bigbank.model.BankAccount;

@@ -1,6 +1,6 @@
 package be.continuum.bigbank.service;
 
-import be.continuum.bigbank.BankAccountInMemoryRepository;
+import be.continuum.bigbank.data.BankAccountInMemoryRepository;
 import be.continuum.bigbank.model.BankAccount;
 import be.continuum.bigbank.model.Transaction;
 
