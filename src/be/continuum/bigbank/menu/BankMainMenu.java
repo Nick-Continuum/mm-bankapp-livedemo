@@ -5,8 +5,8 @@ import be.continuum.bigbank.service.LoginService;
 import static be.continuum.bigbank.menu.MenuHandler.KEYBOARD;
 
 public class BankMainMenu {
+    private final MenuHandler menu = new MenuHandler();
     public void run() {
-        MenuHandler menu = new MenuHandler();
         menu.showMenuTitle("Welcome to the Big Bank App");
 
         String authUserIban = menu.askForUserInput("What is your Iban?");
