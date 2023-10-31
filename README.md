@@ -35,9 +35,9 @@ For Windows, it can be installed by using Chocolatey.
   - [X] The amount needs to be a positive number
   - [X] The amount needs to be available on the account
 - [X] Be able to show the balance of the account
-- [ ] Be able to show the transaction history of the account
-  - [ ] Show all incoming transactions
-  - [ ] Show all outgoing transactions
+- [X] Be able to show the transaction history of the account
+  - [X] Show all incoming transactions
+  - [X] Show all outgoing transactions
 - [X] Be able to log out of the account
 - [ ] OPTIONAL features
   - [ ] Have a menu system in place that lets you choose between the following options:
