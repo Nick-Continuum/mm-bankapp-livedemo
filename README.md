@@ -38,7 +38,7 @@ For Windows, it can be installed by using Chocolatey.
 - [ ] Be able to show the transaction history of the account
   - [ ] Show all incoming transactions
   - [ ] Show all outgoing transactions
-- [ ] Be able to log out of the account
+- [X] Be able to log out of the account
 - [ ] OPTIONAL features
   - [ ] Have a menu system in place that lets you choose between the following options:
     - [ ] Withdraw money
