@@ -17,7 +17,7 @@ public class TransactionMenu {
     public void showIncomingTransactionMenu() {
         menu.showSubMenuTitle("Incoming Transactions");
         for (Transaction transaction : user.getIncomingTransactions()) {
-            transactionRepresentation(transaction);
+            menu.showMenuItem(transactionRepresentation(transaction));
         }
     }
 
