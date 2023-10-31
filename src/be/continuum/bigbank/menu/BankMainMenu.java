@@ -31,24 +31,28 @@ public class BankMainMenu {
             );
             String choice = menu.askForUserInput("Please enter your choice from the menu: ");
 
-            switch (choice) {
-                case "1":
-                    new BalanceMenu(user, menu).showMenu();
-                    break;
-                case "2":
-                    menu.showMenuItem("HERE BE TRANSACTIONS");
-                    break;
-                case "3":
-                    menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
-                    break;
-                case "4":
-                    new TransferMenu(user, menu, bankService).showMenu();
-                    break;
-                default:
-                    menu.showError("Fraude detected, Invalid choice!");
-                case "5":
-                    loginMenu.logout();
-            }
+            handleChoice(choice, user);
+        }
+    }
+
+    private void handleChoice(String choice, BankAccount user) {
+        switch (choice) {
+            case "1":
+                new BalanceMenu(user, menu).showMenu();
+                break;
+            case "2":
+                menu.showMenuItem("HERE BE TRANSACTIONS");
+                break;
+            case "3":
+                menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
+                break;
+            case "4":
+                new TransferMenu(user, menu, bankService).showMenu();
+                break;
+            default:
+                menu.showError("Fraude detected, Invalid choice!");
+            case "5":
+                loginMenu.logout();
         }
     }
 }
