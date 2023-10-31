@@ -41,10 +41,10 @@ public class BankMainMenu {
                 new BalanceMenu(user, menu).showMenu();
                 break;
             case "2":
-                menu.showMenuItem("HERE BE TRANSACTIONS");
+                new TransactionMenu(menu, user).showIncomingTransactionMenu();
                 break;
             case "3":
-                menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
+                new TransactionMenu(menu, user).showOutgoingTransactionMenu();
                 break;
             case "4":
                 new TransferMenu(user, menu, bankService).showMenu();
