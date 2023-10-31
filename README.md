@@ -1,6 +1,8 @@
 # Bank application - Live Demo version
 
-> This is a live demo version of the bank application. It is a simple application that allows you to create a bank account, deposit and withdraw money from it. It also allows you to transfer money between accounts.
+> This is a live demo version of the bank application. 
+> It is a simple application that allows you to log in with an IBAN and pincode.
+> And also allows you to transfer money to other accounts, show your balance and transaction history.
 > 
 > Created By Yannick Van Ham en Nick Bauters
 > 
