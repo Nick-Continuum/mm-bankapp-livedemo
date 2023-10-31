@@ -11,6 +11,13 @@ public class MenuHandler {
         System.out.println("+++++      +++++++       ++++++");
     }
 
+    public void showError(String message) {
+        String seperator = "-".repeat(message.length()+13);
+        System.out.println(seperator);
+        System.out.printf("----- Error: %s\n", message);
+        System.out.println(seperator);
+    }
+
     public String askForUserInput(String message) {
         System.out.printf("%s ", message);
         return KEYBOARD.next();
