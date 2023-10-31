@@ -1,5 +1,6 @@
 package be.continuum.bigbank.menu;
 
+import be.continuum.bigbank.BankAccountInMemoryRepository;
 import be.continuum.bigbank.exceptions.IbanNotFoundException;
 import be.continuum.bigbank.exceptions.IncorrectPinCodeException;
 import be.continuum.bigbank.exceptions.LockedAccountException;
@@ -10,10 +11,11 @@ import static java.lang.System.exit;
 
 public class LoginMenu {
     private final MenuHandler menu;
-    private final LoginService loginService = new LoginService();
+    private final LoginService loginService;
 
-    public LoginMenu(MenuHandler menu) {
+    public LoginMenu(MenuHandler menu, BankAccountInMemoryRepository repo) {
         this.menu = menu;
+        loginService = new LoginService(repo);
     }
 
     public BankAccount login() {

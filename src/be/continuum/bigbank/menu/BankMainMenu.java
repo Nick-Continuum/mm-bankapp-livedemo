@@ -1,10 +1,12 @@
 package be.continuum.bigbank.menu;
 
+import be.continuum.bigbank.BankAccountInMemoryRepository;
 import be.continuum.bigbank.model.BankAccount;
 
 public class BankMainMenu {
     private final MenuHandler menu = new MenuHandler();
-    private final LoginMenu loginMenu = new LoginMenu(menu);
+    private final BankAccountInMemoryRepository accountRepository = new BankAccountInMemoryRepository();
+    private final LoginMenu loginMenu = new LoginMenu(menu, accountRepository);
 
     public void run() {
         menu.showMenuTitle("Welcome to the Big Bank App");
