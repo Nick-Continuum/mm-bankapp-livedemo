@@ -2,10 +2,12 @@ package be.continuum.bigbank.menu;
 
 import be.continuum.bigbank.BankAccountInMemoryRepository;
 import be.continuum.bigbank.model.BankAccount;
+import be.continuum.bigbank.service.BankService;
 
 public class BankMainMenu {
     private final MenuHandler menu = new MenuHandler();
     private final BankAccountInMemoryRepository accountRepository = new BankAccountInMemoryRepository();
+    private final BankService bankService = new BankService(accountRepository);
     private final LoginMenu loginMenu = new LoginMenu(menu, accountRepository);
 
     public void run() {
@@ -36,7 +38,8 @@ public class BankMainMenu {
                     menu.showMenuItem("HERE BE OTHER TRANSACTIONS");
                     break;
                 case "3":
-                    menu.showMenuItem("HERE BE TRANSFERS");
+                    TransferMenu transfer = new TransferMenu(user, menu, bankService);
+                    transfer.showMenu();
                     break;
                 default:
                     menu.showError("Fraude detected, Invalid choice!");
