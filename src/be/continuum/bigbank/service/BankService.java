@@ -21,4 +21,15 @@ public class BankService {
         receiver.deposit(amount);
         receiver.addIncomingTransaction(transaction);
     }
+
+    public Transaction createTransaction(BankAccount sender, String iban, double amount, String description) {
+        BankAccount receiver = accountRepository.findByIban(iban);
+
+        return new Transaction(
+                sender,
+                receiver,
+                amount,
+                description
+        );
+    }
 }

@@ -2,6 +2,7 @@ package be.continuum.bigbank.menu;
 
 import be.continuum.bigbank.BankAccountInMemoryRepository;
 import be.continuum.bigbank.model.BankAccount;
+import be.continuum.bigbank.model.Transaction;
 import be.continuum.bigbank.service.BankService;
 
 public class TransferMenu {
@@ -16,6 +17,17 @@ public class TransferMenu {
     }
 
     public void showMenu() {
+        menu.showSubMenuTitle("Make a Transfer");
 
+        String recipientIban = menu.askForUserInput("Recipient's IBAN: ");
+        String transferAmount = menu.askForUserInput("Amount: " + MenuHandler.EURO_SIGN + " ");
+        String transferDescription = menu.askForUserInput("Description (Optional): ");
+
+        try {
+            Transaction transaction = bankService.createTransaction(user, recipientIban, Double.parseDouble(transferAmount), transferDescription);
+            bankService.transfer(transaction);
+        } catch (RuntimeException re) {
+            menu.showError(re.getMessage());
+        }
     }
 }

@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class MenuHandler {
     public static final Scanner KEYBOARD = new Scanner(System.in);
-    private static final String EURO_SIGN = "\u20ac";
+    public static final String EURO_SIGN = "\u20ac";
 
     public void showMenuItem(String message) {
         System.out.println(message);
