@@ -6,6 +6,8 @@ import be.continuum.bigbank.exceptions.LockedAccountException;
 import be.continuum.bigbank.model.BankAccount;
 import be.continuum.bigbank.service.LoginService;
 
+import static java.lang.System.exit;
+
 public class LoginMenu {
     private final MenuHandler menu;
     private final LoginService loginService = new LoginService();
@@ -29,5 +31,11 @@ public class LoginMenu {
                 menu.showError(lae.getMessage());
             }
         }
+    }
+
+    public void logout() {
+        menu.showMenuItem("Logging out...");
+        menu.showMenuItem("Logged out successfully");
+        exit(0);
     }
 }

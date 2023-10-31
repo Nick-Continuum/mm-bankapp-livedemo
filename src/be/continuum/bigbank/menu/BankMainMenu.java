@@ -39,7 +39,7 @@ public class BankMainMenu {
                 default:
                     menu.showError("Fraude detected, Invalid choice!");
                 case "4":
-                    loginMenu.logOut();
+                    loginMenu.logout();
             }
         }
     }
