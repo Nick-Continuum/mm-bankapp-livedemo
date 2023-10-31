@@ -1,10 +1,12 @@
 package be.continuum.bigbank.model;
 
 public class BankAccount {
+    private static final int LOG_IN_ATTEMPTS = 3;
     private String iban;
     private String pin;
     private String fullName;
     private double balance;
+    private int locked;
     private Transaction[] incomingTransactions;
     private Transaction[] outgoingTransactions;
 
@@ -18,6 +20,7 @@ public class BankAccount {
         this.balance = balance;
         this.incomingTransactions = incomingTransactions;
         this.outgoingTransactions = outgoingTransactions;
+        this.accountUnlocked();
     }
 
     public String getIban() {
@@ -66,5 +69,21 @@ public class BankAccount {
 
     void setOutgoingTransactions(Transaction[] outgoingTransactions) {
         this.outgoingTransactions = outgoingTransactions;
+    }
+
+    public void accountUnlocked() {
+        locked = LOG_IN_ATTEMPTS;
+    }
+
+    public void failedPinAttempt() {
+        locked--;
+    }
+
+    public boolean isLocked() {
+        return locked <= 0;
+    }
+
+    public int getAttemptsRemaining() {
+        return locked;
     }
 }

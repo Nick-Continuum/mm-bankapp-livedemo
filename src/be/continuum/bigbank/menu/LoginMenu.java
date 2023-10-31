@@ -1,6 +1,8 @@
 package be.continuum.bigbank.menu;
 
 import be.continuum.bigbank.exceptions.IbanNotFoundException;
+import be.continuum.bigbank.exceptions.IncorrectPinCodeException;
+import be.continuum.bigbank.exceptions.LockedAccountException;
 import be.continuum.bigbank.model.BankAccount;
 import be.continuum.bigbank.service.LoginService;
 
@@ -21,6 +23,10 @@ public class LoginMenu {
                 return loginService.login(authUserIban, authUserPin);
             } catch (IbanNotFoundException infe) {
                 menu.showError(infe.getMessage());
+            } catch (IncorrectPinCodeException ipe) {
+                menu.showError(ipe.getMessage());
+            } catch (LockedAccountException lae) {
+                menu.showError(lae.getMessage());
             }
         }
     }
