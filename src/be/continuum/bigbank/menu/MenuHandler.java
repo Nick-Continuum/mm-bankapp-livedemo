@@ -1,21 +1,48 @@
 package be.continuum.bigbank.menu;
 
+import be.continuum.bigbank.model.BankAccount;
+
 import java.util.Scanner;
 
 public class MenuHandler {
     public static final Scanner KEYBOARD = new Scanner(System.in);
+    private static final String EURO_SIGN = "\u20ac";
 
+    public void showMenuItem(String message) {
+        System.out.println(message);
+    }
     public void showMenuTitle(String message) {
-        System.out.println("+++++      +++++++       ++++++");
+        showMenuItem("+++++      +++++++       ++++++");
         System.out.printf("+ %s +\n", message);
-        System.out.println("+++++      +++++++       ++++++");
+        showMenuItem("+++++      +++++++       ++++++");
+    }
+
+    public void showSubMenuTitle(String title) {
+        System.out.printf("----- %s -----\n", title);
+    }
+
+    public void showMenuBlock(String... blockItems) {
+        // Validate length for the separator
+        int longestWord = 0;
+        for (String blockItem : blockItems) {
+            if (blockItem.length() > longestWord) longestWord = blockItem.length();
+        }
+
+        String separator = "-".repeat(longestWord);
+
+        // Print the message
+        showMenuItem(separator);
+        for (String blockItem : blockItems) {
+            showMenuItem(blockItem);
+        }
+        showMenuItem(separator);
     }
 
     public void showError(String message) {
-        String seperator = "-".repeat(message.length()+13);
-        System.out.println(seperator);
+        String separator = "-".repeat(message.length()+13);
+        showMenuItem(separator);
         System.out.printf("----- Error: %s\n", message);
-        System.out.println(seperator);
+        showMenuItem(separator);
     }
 
     public String askForUserInput(String message) {
@@ -23,8 +50,11 @@ public class MenuHandler {
         return KEYBOARD.next();
     }
 
-    public int askForUserInputAsInteger(String message) {
-        return Integer.parseInt(askForUserInput(message));
+    public void showUserInfo(BankAccount user) {
+        showMenuBlock(
+                "Welcome: " + user.getFullName(),
+                String.format("Your balance: %s %.2f", EURO_SIGN, user.getBalance())
+        );
     }
 
 }
