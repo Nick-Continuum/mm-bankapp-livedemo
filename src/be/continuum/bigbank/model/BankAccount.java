@@ -99,7 +99,7 @@ public class BankAccount {
     }
 
     private void hasSufficientFunds(double amount) {
-        if (balance > amount) throw new IllegalArgumentException("Not enough balance available for withdrawal");
+        if (balance < amount) throw new IllegalArgumentException("Not enough balance available for withdrawal");
     }
 
     public void accountUnlocked() {
