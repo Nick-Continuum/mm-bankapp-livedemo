@@ -43,3 +43,6 @@ For Windows, it can be installed by using Chocolatey.
   - [ ] Have a menu system in place that lets you choose between the following options:
     - [ ] Withdraw money
     - [ ] Deposit money
+  - [ ] Have fine-grained transaction history options
+    - [ ] Show a sorted list of all transactions made with an account
+    - [ ] Show a sorted list of all transactions between two dates
