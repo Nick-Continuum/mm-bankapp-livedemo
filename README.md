@@ -30,10 +30,10 @@ For Windows, it can be installed by using Chocolatey.
   - [X] Transfer money
   - [X] Show transaction history
   - [X] Log out
-- [ ] Be able to transfer money to another account
-  - [ ] The recipient IBAN needs to be correct
-  - [ ] The amount needs to be a positive number
-  - [ ] The amount needs to be available on the account
+- [X] Be able to transfer money to another account
+  - [X] The recipient IBAN needs to be correct
+  - [X] The amount needs to be a positive number
+  - [X] The amount needs to be available on the account
 - [ ] Be able to show the balance of the account
 - [ ] Be able to show the transaction history of the account
   - [ ] Show all incoming transactions
