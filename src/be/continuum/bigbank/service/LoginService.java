@@ -10,8 +10,8 @@ public class LoginService {
     public BankAccount login(String iban, String pin) {
         BankAccount user = accountRepository.findByIban(iban);
 
-        if (user.getPin().equals(pin)) return user;
         if (user.isLocked()) throw new LockedAccountException("Account has been locked after 3 failed attempts");
+        if (user.getPin().equals(pin)) return user;
 
         user.failedPinAttempt();
         throw new IncorrectPinCodeException("The provided pincode was not correct. " + user.getAttemptsRemaining() + " attempts remaining");
