@@ -22,10 +22,10 @@ For Mac and linux, it can be installed by using JDKMan.
 For Windows, it can be installed by using Chocolatey.   
 
 ## UseCases
-- [ ] Have a login system in place that lets you log in with IBAN and Pincode.
-  - [ ] An existing IBAN needs to be used.
-  - [ ] The pincode needs to be correct.
-  - [ ] A pincode can only be entered wrong three times. After that the account locks
+- [X] Have a login system in place that lets you log in with IBAN and Pincode.
+  - [X] An existing IBAN needs to be used.
+  - [X] The pincode needs to be correct.
+  - [X] A pincode can only be entered wrong three times. After that the account locks
 - [ ] Have a menu system in place that lets you choose between the following options:
   - [ ] Transfer money
   - [ ] Show balance
